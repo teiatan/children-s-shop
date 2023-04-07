@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Form, Input, Label, Button } from "./SearchForm.styled";
+import { Form, Input, Label, Button, Tag } from "./SearchForm.styled";
 
 
 export function SearchForm({handleSearchSubmit}) {
@@ -21,20 +21,22 @@ export function SearchForm({handleSearchSubmit}) {
         setInput("");
     }
     return (
-        <Form onSubmit={onSubmit}>
-            <Button type="submit">🔍
-                <Label>Search</Label>
-            </Button>
-        
-            <Input
-                type="text"
-                autocomplete="off"
-                autoFocus
-                placeholder="Знайти товар за назвою"
-                value={input}
-                onChange={onChange}
-        />
-        </Form>
+        <Tag>
+            <Form onSubmit={onSubmit}>
+                <Button type="submit">🔍
+                    <Label>Search</Label>
+                </Button>
+            
+                <Input
+                    type="text"
+                    autocomplete="off"
+                    autoFocus
+                    placeholder="Знайти товар за назвою"
+                    value={input}
+                    onChange={onChange}
+            />
+            </Form>
+        </Tag>
     );
 };
 

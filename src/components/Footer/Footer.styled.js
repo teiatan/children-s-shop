@@ -5,7 +5,8 @@ export const FooterTag = styled.footer`
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: ${props => (props.theme.footer.backgroundColor)};
+  //background-color: ${props => (props.theme.footer.backgroundColor)};
+  background: ${props => (props.theme.footer.background)};
 
   ${device.mobile} {
     position: static;

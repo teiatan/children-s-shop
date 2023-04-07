@@ -7,19 +7,20 @@ export const ProductCardContainer = styled.li`
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 8px;
-  background-color: cadetblue;
   height: 340px;
   margin: 4px;
   padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: ${props => (props.theme.productCard.background)};
+  box-shadow: 0px 0px 10px ${props => (props.theme.productCard.border)};
+  color: ${props => (props.theme.productCard.text)};
 
   width: calc((100% - 192px) / 4);
 
   &:hover {
     transform: translate(0, -5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: ${props => (props.theme.header.backgroundColor)};
+    box-shadow: 0 5px 15px ${props => (props.theme.productCard.borderHover)};
+    background-color: ${props => (props.theme.productCard.backgroundHover)};
+    color: ${props => (props.theme.productCard.textHover)};
   }
   @media (max-width: 1200px) {
     width: calc((100% - 96px) / 2);

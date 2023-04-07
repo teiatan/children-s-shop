@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 import { device } from "utils/mediaQueries";
 
 export const Tag = styled.div`
-
+border-radius: 80%;
+//border-color: ${props => (props.theme.header.formBorder)};
+border-color: blue;
+border-width: 10px;
   ${device.mobile} {
     position: static;
   }
