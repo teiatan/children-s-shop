@@ -31,9 +31,25 @@ img{
   display: block;
 }
 #root{
-  background-image: url('../public/children-s-background.png');
+  /* background-image: url('../public/children-s-background.png');
   background-repeat:no-repeat;
   background-size: cover;
   background-position: 50% 100%;
-  background-attachment:fixed;
+  background-attachment:fixed; */
+
+  /* мілкий горошок */
+ /*  background-size: 21.6px 21.6px;
+  background-repeat: repeat;
+  background-position: 10px 1px, 20.4px 11.4px;
+  background-color: white;
+  background-image: radial-gradient(circle, rgba(247, 169, 168, 0.4) 3px, transparent 3px), radial-gradient(circle, rgba(247, 169, 168, 0.4) 3px, transparent 3px);
+ */
+  /* крупний горошок */
+
+  /* background-size: 86.4px 86.4px;
+  background-repeat: repeat;
+  background-position: 43px -14px, 0px 29px;
+  background-color: white;
+  background-image: radial-gradient(circle, rgba(247, 169, 168, 0.4) 11px, transparent 12px), radial-gradient(circle, rgba(247, 169, 168, 0.4) 11px, transparent 12px);
+ */
 }

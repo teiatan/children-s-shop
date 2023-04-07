@@ -5,17 +5,19 @@ class Theme {
     constructor({header, main, footer}) {
 
         this.header = header ?? {
-            backgroundColor: "rgb(3, 169, 161)",
-            textColor: "white",
+            backgroundColor: "rgba(247, 169, 168, 1)",
+            textColor: "rgba(97, 63, 117, 1)",
         };
 
         this.main = main ?? {
-
+            background: "rgba(206, 198, 225, 0.1)",
+            backgroundDots: "rgba(247, 169, 168, 0.4)",
+            
         };
 
         this.footer = footer ?? {
-            backgroundColor: "rgb(3, 169, 161)",
-            textColor: "white",
+            backgroundColor: "rgba(247, 169, 168, 1)",
+            textColor: "rgba(97, 63, 117, 1)",
         };
     }
 }
@@ -25,12 +27,15 @@ export const light = new Theme({});
 
 export const dark = new Theme({
     header: {
-        backgroundColor: "black",
-        textColor: "white",
+        backgroundColor: "rgb(70, 42, 61)",
+        textColor: "rgb(200, 198, 215)",
     },
-    //main: {},
+    main: {
+        background: "rgba(90, 90, 102, 0.7)",
+        backgroundDots: "rgb(200, 198, 215)",
+    },
     footer: {
-        backgroundColor: "black",
-        textColor: "white",
+        backgroundColor: "rgb(70, 42, 61)",
+        textColor: "rgb(200, 198, 215)",
     }
 });

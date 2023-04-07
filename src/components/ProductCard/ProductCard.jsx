@@ -5,8 +5,7 @@ const STOPPER = "https://wellesleysocietyofartists.org/wp-content/uploads/2015/1
 
 
 export function ProductCard({ data }) {
-    const [pictureNumber, setPictureNumber] = useState(0);
-    console.log("setPictureNumber:", setPictureNumber);
+    const [pictureNumber/* , setPictureNumber */] = useState(0);
     const { name, price, photo, category } = data;
     const hendleButton = ({ target }) => {
         if (target.name === 'left') {
