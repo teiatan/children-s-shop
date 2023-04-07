@@ -19,7 +19,7 @@ export const ProductCardContainer = styled.li`
   &:hover {
     transform: translate(0, -5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: #fff593;
+    background-color: ${props => (props.theme.header.backgroundColor)};
   }
   @media (max-width: 1200px) {
     width: calc((100% - 96px) / 2);
