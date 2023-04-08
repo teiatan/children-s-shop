@@ -13,7 +13,7 @@ import { Pagination } from "./pagination/Pagination";
 export const App = () => {
 
 const theme = Theme();
-const perPage = 6;
+const perPage = 12;
 
 const [filteredGoods, setFilteredGoods] = useState(goods);
 const [shownGoods, setShownGoods] = useState(filteredGoods.slice(0, perPage));
