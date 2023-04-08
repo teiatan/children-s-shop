@@ -1,4 +1,4 @@
-//import { device } from '../../utils/mediaQueries';
+import { device } from '../../utils/mediaQueries';
 
 const { default: styled } = require('@emotion/styled');
 export const ProductCardContainer = styled.li`
@@ -29,7 +29,7 @@ export const ProductCardContainer = styled.li`
     width: calc((100% - 96px) / 2);
   }
   @media (max-width: 768px) {
-    width: 480px;
+    width: 320px;
   }
 `;
 
@@ -64,9 +64,36 @@ export const ButtonThumb = styled.div`
 `;
 
 export const InfoCard = styled.div`
-  display: flex;
+  position: relative;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  margin-top: 10px;
   height: 24%;
   width: 100%;
+  min-height: 90px;
+
+  ${device.desktop} {
+    min-height: 120px;
+  }
+`;
+
+export const Name = styled.p`
+  color: ${props => props.theme.productCard.nameText};
+  font-weight: 600;
+  text-align: start;
+`;
+
+export const Price = styled.p`
+  //color: ${props => props.theme.productCard.priceText};
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+export const Description = styled.p`
+  //color: ${props => props.theme.productCard.descriptionText};
+  font-size: 12px;
+  line-height: 1;
+  text-align: justify;
 `;

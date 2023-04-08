@@ -30,7 +30,7 @@ code {
 img{
   display: block;
 }
-#root{
+/* #root{ */
   /* background-image: url('../public/children-s-background.png');
   background-repeat:no-repeat;
   background-size: cover;
@@ -52,4 +52,4 @@ img{
   background-color: white;
   background-image: radial-gradient(circle, rgba(247, 169, 168, 0.4) 11px, transparent 12px), radial-gradient(circle, rgba(247, 169, 168, 0.4) 11px, transparent 12px);
  */
-}
+/* } */

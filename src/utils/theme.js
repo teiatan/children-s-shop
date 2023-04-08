@@ -30,6 +30,7 @@ class Theme {
             background: "#ffffff",
             backgroundHover: "#fff593",
             text: "rgb(0, 0, 0)",
+            nameText: "purple",
             border: "rgba(0, 0, 0, 0.1)",
             borderHover: "rgba(0, 0, 0, 0.3)",
         }
@@ -62,9 +63,11 @@ export const dark = new Theme({
     productCard: {
         background: "rgba(48, 49, 52)",
         backgroundHover: "rgb(60, 64, 67)",
-        text: "rgb(255, 255, 255)",
+        text: "rgb(178, 183, 186)",
         textHover: "rgb(255, 255, 255)",
+        nameText: "rgb(245, 105, 96)",
         border: "rgba(32, 33, 36)",
         borderHover: "rgba(32, 33, 36, 0.3)",
+
     }
 });

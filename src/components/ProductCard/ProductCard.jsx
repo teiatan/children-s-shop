@@ -1,4 +1,4 @@
-import { ButtonThumb, ImageThumb, ProductCardContainer, ProductImage, InfoCard } from "./ProductCard.styled";
+import { ImageThumb, ProductCardContainer, ProductImage, InfoCard, Name, Price, Description } from "./ProductCard.styled";
 import PropTypes from 'prop-types';
 import { useState } from "react";
 const STOPPER = "https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg"
@@ -6,27 +6,28 @@ const STOPPER = "https://wellesleysocietyofartists.org/wp-content/uploads/2015/1
 
 export function ProductCard({ data }) {
     const [pictureNumber/* , setPictureNumber */] = useState(0);
-    const { name, price, photo, category } = data;
-    const hendleButton = ({ target }) => {
+    const { name, price, photo, description } = data;
+    /* const hendleButton = ({ target }) => {
         if (target.name === 'left') {
             console.log('ліва кнопка')
         }
          else{console.log('права кнопка')}
-    }
+    } */
 
     return <ProductCardContainer >
         <ImageThumb>
         {<ProductImage src={photo[0]? photo[pictureNumber]?.src : STOPPER} alt={photo[pictureNumber]?.alt}  height="300px"/>}
-            {photo.length > 1 &&
-                <ButtonThumb >
+            {/* {photo.length > 1 &&
+                {<ButtonThumb>
                     <button type="button" onClick={hendleButton} name='left'>left</button>
                     <button type="button" onClick={hendleButton} name='right'>right</button>
-                </ButtonThumb>}
+                </ButtonThumb>}} */}
         </ImageThumb>
         <InfoCard>
-            <p>{name}</p>
-            {category.length !== 0 && <a href='/'> Категорії: {category.join(' ')}</a>}
-            <span>    {price} грн/шт</span>
+            <Name>{name}</Name>
+            <Description>{description.slice(0, 150)}{description.length > 150 && "..."}</Description>
+            {/* {category.length !== 0 && <a href='/'> Категорії: {category.join(' ')}</a>} */}
+            <Price>    {price} грн/шт</Price>
         </InfoCard>
     </ProductCardContainer>
 }
