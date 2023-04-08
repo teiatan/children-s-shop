@@ -3,11 +3,8 @@ import { ProductCard } from 'components/ProductCard/ProductCard';
 import { GalleryStyle } from './GalleryProducts.styled';
 //import { goods } from 'data/goods';
 
-export function GalleryProducts({ allGoods, search }) {
-  console.log(allGoods[0].name);
-  
-  const shownGoods = allGoods.filter(goodsItem => goodsItem.name.toLowerCase().includes(search));
-  console.log(shownGoods);
+export function GalleryProducts({ shownGoods }) {
+
   return (
     <GalleryStyle>
           {shownGoods.map((data) => (
@@ -18,5 +15,5 @@ export function GalleryProducts({ allGoods, search }) {
 }
 
 GalleryProducts.propTypes = {
-  allGoods: PropTypes.array.isRequired,
+  shownGoods: PropTypes.array.isRequired,
 };
