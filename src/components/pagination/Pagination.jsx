@@ -10,7 +10,7 @@ export function Pagination ({perPage, array, giveCuttedArray}) {
     useEffect(()=>{
         setTotalPages(Math.ceil(array.length/perPage));
     }, [array.length, perPage]);
-    
+
     useEffect(()=>{
         let pag = 0;
         let pagarray = [];
@@ -48,7 +48,8 @@ export function Pagination ({perPage, array, giveCuttedArray}) {
         window.scrollTo(0,0);   
     };
 
-    return (
+    return (<>
+        {totalPages > 1 &&
         <Div>
             <Button 
                 type="button" name="prevButton"
@@ -69,5 +70,6 @@ export function Pagination ({perPage, array, giveCuttedArray}) {
                 {...(currentPage===totalPages ? {disabled: true} : {onClick: onClick})}
             >Next</Button>
         </Div>
-    );
+        }
+    </>);
 };
