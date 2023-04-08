@@ -9,6 +9,8 @@ class Theme {
             background: "linear-gradient(to right, #f7797d, #FBD786, #C6FFDD)",
             textColor: "rgba(97, 63, 117, 1)",
             formBorder: "rgba(255, 255, 255)",
+            formBackground: "rgb(255,255, 255)",
+            formText: "rgb(0, 0, 0)",
         };
 
         this.main = main ?? {
@@ -43,6 +45,8 @@ export const dark = new Theme({
         background: "rgb(48, 49, 52)",
         textColor: "rgb(245, 105, 96)",
         formBorder: "rgb(245, 105, 96)",
+        formBackground: "rgb(48, 49, 52)",
+        formText: "rgb(255,255, 255)",
     },
     main: {
         background: "rgba(32, 33, 36)",

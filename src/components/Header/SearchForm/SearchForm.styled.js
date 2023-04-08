@@ -1,22 +1,16 @@
 import styled from '@emotion/styled';
-import { device } from "utils/mediaQueries";
+//import { device } from "utils/mediaQueries";
 
 export const Tag = styled.div`
-border-radius: 80%;
-//border-color: ${props => (props.theme.header.formBorder)};
-border-color: blue;
-border-width: 10px;
-  ${device.mobile} {
-    position: static;
-  }
 
 `;
   
 export const Form = styled.form`
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: ${props => (props.theme.header.formBackground)};
     border-radius: 20px;
+    border: 1px solid ${props => (props.theme.header.formBorder)};
     overflow: hidden;
 `;
   
@@ -25,6 +19,7 @@ export const Button = styled.button`
     border: 0;
     opacity: 0.6;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: ${props => (props.theme.header.formBackground)};
     cursor: pointer;
     &:hover {
         opacity: 1;
@@ -53,6 +48,8 @@ export const Input = styled.input`
     outline: none;
     padding-left: 4px;
     padding-right: 4px;
+    background-color: ${props => (props.theme.header.formBackground)};
+    color: ${props => (props.theme.header.formText)};
 
     &::placeholder {
     font: inherit;

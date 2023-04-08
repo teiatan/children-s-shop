@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { device } from "utils/mediaQueries";
 
-export const HeaderTag = styled.footer`
+export const HeaderTag = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
