@@ -12,9 +12,13 @@ export const App = () => {
 
 const theme = Theme();
 
+const handleSearchSubmit = (inputValue) => {
+  console.log(`You are looking for ${inputValue}`);
+};
+
   return (<>
   <ThemeProvider theme={theme}>
-    <Header/>
+    <Header handleSearchSubmit={handleSearchSubmit}/>
 
     <Main>
       <PageContainer>

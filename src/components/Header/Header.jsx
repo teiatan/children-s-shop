@@ -5,11 +5,7 @@ import { Logo } from "./Logo/Logo";
 import { SearchForm } from "./SearchForm/SearchForm";
 import { ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
 
-export function Header() {
-
-    const handleSearchSubmit = (inputValue) => {
-        console.log(`You are looking for ${inputValue}`);
-    };
+export function Header({handleSearchSubmit}) {
 
     return (
         <HeaderTag>
@@ -18,7 +14,7 @@ export function Header() {
                     <Logo />
                     <SearchForm handleSearchSubmit={handleSearchSubmit}/>
                     <ThemeSwitcher/>
-                    <p>Фільтр</p>
+                    {/* <p>Фільтр</p> */}
                 </CoverDiv>
             </PageContainer>
         </HeaderTag>
