@@ -11,10 +11,7 @@ export const HeaderTag = styled.header`
   background: #C6FFDD;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
   background: ${props => (props.theme.header.background)}; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  ${device.mobile} {
-    position: static;
-  }
+  border-bottom: 1px groove ${props => (props.theme.header.bottomBorder)};
 
 `;
 

@@ -7,11 +7,11 @@ export const FooterTag = styled.footer`
   bottom: 0;
   //background-color: ${props => (props.theme.footer.backgroundColor)};
   background: ${props => (props.theme.footer.background)};
+  border-top: 1px groove ${props => (props.theme.header.bottomBorder)};
 
   ${device.mobile} {
     position: static;
   }
-
 `;
 
 export const AddressTag = styled.address`

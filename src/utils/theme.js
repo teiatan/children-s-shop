@@ -11,6 +11,7 @@ class Theme {
             formBorder: "rgba(255, 255, 255)",
             formBackground: "rgb(255,255, 255)",
             formText: "rgb(0, 0, 0)",
+            bottomBorder: "rgba(206, 198, 225, 0.1)",
         };
 
         this.main = main ?? {
@@ -47,6 +48,7 @@ export const dark = new Theme({
         formBorder: "rgb(245, 105, 96)",
         formBackground: "rgb(48, 49, 52)",
         formText: "rgb(255,255, 255)",
+        bottomBorder: "rgba(245, 105, 96, 0.2)",
     },
     main: {
         background: "rgba(32, 33, 36)",
