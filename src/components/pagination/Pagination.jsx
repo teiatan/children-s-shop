@@ -45,23 +45,24 @@ export function Pagination ({perPage, array, onPageButtonClick, onNextButtonClic
 
     return (
         <Div>
-            <Button type="button" onClick={onPrevClick}>Prev</Button>
+            <Button 
+                type="button" 
+                {...(currentPage===1 ? {disabled: true} : {onClick: onPrevClick})}
+            >Prev</Button>
             {paginationArray.map(pag => {
                 return (
                     <div key={pag}>
-                       {/*  {currentPage===pag ?  
-                        <Button type="button" disabled>{pag}</Button> :
-                        <Button type="button" onClick={onPageClick}>{pag}</Button>} */}
-
-<Button 
-type="button" 
-{...(currentPage===pag ? {disabled: true} : {onClick: onPageClick})}>{pag}
-</Button>
-
+                        <Button 
+                            type="button" 
+                            {...(currentPage===pag ? {disabled: true} : {onClick: onPageClick})}
+                        >{pag}</Button>
                     </div>
                 );
             })}
-            <Button type="button" onClick={onNextClick}>Next</Button>
+            <Button 
+                type="button" 
+                {...(currentPage===totalPages ? {disabled: true} : {onClick: onNextClick})}
+            >Next</Button>
         </Div>
     );
 };
