@@ -13,28 +13,21 @@ import { Pagination } from "./pagination/Pagination";
 export const App = () => {
 
 const theme = Theme();
-const perPage = 5;
+const perPage = 6;
 
-const [search, setSearch] = useState('');
-const filteredGoods = goods.filter(goodsItem => goodsItem.name.toLowerCase().includes(search));
-const [shownGoods, setShownGoods] = useState(goods.slice(0, perPage));
+const [filteredGoods, setFilteredGoods] = useState(goods);
+const [shownGoods, setShownGoods] = useState(filteredGoods.slice(0, perPage));
 
 const handleSearchSubmit = (inputValue) => {
-  setSearch(inputValue.toLowerCase());
+  const search = inputValue.toLowerCase();
+  const filteredGoodsArray = goods.filter(goodsItem => goodsItem.name.toLowerCase().includes(search));
+  setFilteredGoods(filteredGoodsArray);
+  setShownGoods(filteredGoodsArray.slice(0, perPage));
 };
 
-const onPageButtonClick = (array) => {
+const giveCuttedArray = (array) => {
   setShownGoods(array);
 };
-
-const onNextButtonClick = (array) => {
-  setShownGoods(array);
-};
-
-const onPrevButtonClick = (array) => {
-  setShownGoods(array);
-};
-
   return (<>
   <ThemeProvider theme={theme}>
     <Header handleSearchSubmit={handleSearchSubmit}/>
@@ -45,9 +38,7 @@ const onPrevButtonClick = (array) => {
         <Pagination
           perPage={perPage}
           array={filteredGoods}
-          onPageButtonClick={onPageButtonClick} 
-          onNextButtonClick={onNextButtonClick} 
-          onPrevButtonClick={onPrevButtonClick} 
+          giveCuttedArray={giveCuttedArray}
         />
       </PageContainer>
     </Main>
