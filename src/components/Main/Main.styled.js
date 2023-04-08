@@ -3,6 +3,8 @@ import { device } from 'utils/mediaQueries';
 const { default: styled } = require('@emotion/styled');
 
 export const MainStyle = styled.main`
+  min-height: 100vh;
+
   padding-bottom: 44px;
   padding-top: 54px;
 

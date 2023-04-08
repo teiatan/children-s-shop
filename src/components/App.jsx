@@ -7,13 +7,15 @@ import { Footer } from "./Footer/Footer";
 import { PageContainer } from "./pageContainer/pageContainer";
 import { Theme } from "providers/themeContextProvider";
 import { ThemeProvider } from "@emotion/react";
+import { useState } from "react";
 
 export const App = () => {
 
+const [search, setSearch] = useState('');
 const theme = Theme();
 
 const handleSearchSubmit = (inputValue) => {
-  console.log(`You are looking for ${inputValue}`);
+  setSearch(inputValue.toLowerCase());
 };
 
   return (<>
@@ -22,7 +24,7 @@ const handleSearchSubmit = (inputValue) => {
 
     <Main>
       <PageContainer>
-        <GalleryProducts goodsItem={goods} />
+        <GalleryProducts allGoods={goods} search={search}/>
       </PageContainer>
     </Main>
   
