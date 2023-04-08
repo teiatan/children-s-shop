@@ -7,12 +7,13 @@ export function Pagination ({perPage, array, onPageButtonClick, onNextButtonClic
     const [currentPage, setCurrentPage] = useState(1);
     
     const onPageClick = (e) => {
-        const page = e.target.textContent;
-        setCurrentPage(e.target.textContent);
+        const page = Number(e.target.textContent);
+        setCurrentPage(page);
         const from = (page-1+(perPage-1)*(page-1));
         const to = (page-1 + perPage + (perPage-1)*(page-1));
         const cuttedArray = array.slice(from, to);
         onPageButtonClick(cuttedArray);
+        window.scrollTo(0,0);
       };
       
       const onNextClick = () => {
@@ -22,6 +23,7 @@ export function Pagination ({perPage, array, onPageButtonClick, onNextButtonClic
         const to = (page-1 + perPage + (perPage-1)*(page-1));
         const cuttedArray = array.slice(from, to);
         onNextButtonClick(cuttedArray);
+        window.scrollTo(0,0);
       };
       
       const onPrevClick = () => {
@@ -31,6 +33,7 @@ export function Pagination ({perPage, array, onPageButtonClick, onNextButtonClic
         const to = (page-1 + perPage + (perPage-1)*(page-1));
         const cuttedArray = array.slice(from, to);
         onPrevButtonClick(cuttedArray);
+        window.scrollTo(0,0);
       };
 
     let pag = 0;
@@ -46,9 +49,14 @@ export function Pagination ({perPage, array, onPageButtonClick, onNextButtonClic
             {paginationArray.map(pag => {
                 return (
                     <div key={pag}>
-                        {currentPage===pag ?  
+                       {/*  {currentPage===pag ?  
                         <Button type="button" disabled>{pag}</Button> :
-                        <Button type="button" onClick={onPageClick}>{pag}</Button>}
+                        <Button type="button" onClick={onPageClick}>{pag}</Button>} */}
+
+<Button 
+type="button" 
+{...(currentPage===pag ? {disabled: true} : {onClick: onPageClick})}>{pag}
+</Button>
 
                     </div>
                 );
