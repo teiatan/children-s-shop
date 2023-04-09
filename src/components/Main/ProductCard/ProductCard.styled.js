@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { device } from '../../../utils/mediaQueries';
 
 const { default: styled } = require('@emotion/styled');
-export const ProductCardContainer = styled.li`
+export const ProductCardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

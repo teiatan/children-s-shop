@@ -25,9 +25,9 @@ export function GoodsList() {
     <>
         <GalleryProducts shownGoods={shownGoods}/>
         <Pagination
-        perPage={perPage}
-        array={allGoods}
-        giveCuttedArray={giveCuttedArray}
+            perPage={perPage}
+            array={allGoods}
+            giveCuttedArray={giveCuttedArray}
         />
     </>
         
