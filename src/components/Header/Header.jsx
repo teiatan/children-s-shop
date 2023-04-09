@@ -29,13 +29,13 @@ export function Header() {
                         <Button>
                             <TfiFilter color={theme.header.textColor} size={25}/>
                         </Button>
-                        <Link>
+                        <Button>
                             <VscSignIn color={theme.header.textColor} size={30} />
-                        </Link>
+                        </Button>
                         <Button>
                             <VscSignOut color={theme.header.textColor} size={30}/>
                         </Button>
-                        <Link> 
+                        <Link to={"/basket"}> 
                             <SlBasket color={theme.header.textColor} size={30}/>
                         </Link>
                         <Link to={"/profile"}>
