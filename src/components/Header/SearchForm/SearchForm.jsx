@@ -1,10 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Form, Input, Label, Button, Tag } from "./SearchForm.styled";
+import { useSearch } from "providers/headerContextProvider";
 
 
 export function SearchForm({handleSearchSubmit}) {
-
+    /* const search = useSearch();
+    console.log(search); */
     const [input, setInput] = useState("");
 
     const onChange = e => {

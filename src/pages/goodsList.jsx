@@ -1,8 +1,8 @@
-import { GalleryProducts } from "components/Main/GalleryProducts/GalleryProducts";
-import { Pagination } from "components/pagination/Pagination";
+//import { GalleryProducts } from "components/Main/GalleryProducts/GalleryProducts";
+//import { Pagination } from "components/pagination/Pagination";
 
 export function GoodsList() {
-    const perPage = 12;
+    /* const perPage = 12;
     const [filteredGoods, setFilteredGoods] = useState(goods);
     const [shownGoods, setShownGoods] = useState(filteredGoods.slice(0, perPage));
     
@@ -29,5 +29,5 @@ export function GoodsList() {
         />
     </>
         
-    )
+    ) */
 }
