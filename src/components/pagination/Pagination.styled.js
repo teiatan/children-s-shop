@@ -16,4 +16,8 @@ export const Button = styled.button`
     border: none;
     //box-shadow: 2px 3px 5px lightgrey;
     cursor: pointer;
+
+    :disabled {
+        opacity: 0.5;
+        }
 `;
