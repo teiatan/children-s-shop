@@ -1,12 +1,11 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import { Form, Input, Label, Button, Tag } from "./SearchForm.styled";
 import { useSearch } from "providers/headerContextProvider";
 
 
-export function SearchForm({handleSearchSubmit}) {
-    /* const search = useSearch();
-    console.log(search); */
+export function SearchForm() {
+    const search = useSearch();
+
     const [input, setInput] = useState("");
 
     const onChange = e => {
@@ -15,7 +14,7 @@ export function SearchForm({handleSearchSubmit}) {
 
     const onSubmit = e => {
         e.preventDefault();
-        handleSearchSubmit(input);
+        search.setSearch(input);
         resetForm();
     };
 
@@ -41,7 +40,3 @@ export function SearchForm({handleSearchSubmit}) {
         </Tag>
     );
 };
-
-SearchForm.propTypes = {
-    handleSearchSubmit: PropTypes.func,
-}

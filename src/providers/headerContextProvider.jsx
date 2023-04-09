@@ -6,7 +6,7 @@ export const HeaderContextProvider = ({children}) => {
     const [search, setSearch] = useState("");
 
     return (
-        <HeaderContext.Provider value={{search, setSearch}}>
+        <HeaderContext.Provider value={{search: {search, setSearch}}}>
             {children}
         </HeaderContext.Provider>
     )
