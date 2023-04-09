@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Button } from "./ThemeSwitcher.styled";
 import { BsSun } from 'react-icons/bs';
-import { ChangeTheme } from 'providers/themeContextProvider';
+import { ChangeTheme } from 'context/theme';
 import { useTheme } from '@emotion/react';
 
 export function ThemeSwitcher(props) {

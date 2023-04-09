@@ -2,19 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
-import { ThemeContextProvider } from 'providers/themeContextProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { HeaderContextProvider } from 'providers/headerContextProvider';
+import { ContextProvider } from 'context/contextProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
-    <ThemeContextProvider>
-      <HeaderContextProvider>
+    <ContextProvider>
       <BrowserRouter /* basename="children-s-shop" */>
         <App />
       </BrowserRouter>
-      </HeaderContextProvider>
-    </ThemeContextProvider>
+    </ContextProvider>
   </React.StrictMode>
 );
