@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { Button } from "./ThemeSwitcher.styled";
 import { BsSun } from 'react-icons/bs';
-import { ChangeTheme } from 'context/theme';
 import { useTheme } from '@emotion/react';
+import { useThemeColors } from 'context/contectxtHooks';
 
-export function ThemeSwitcher(props) {
+export function ThemeSwitcher() {
 
-    const onClick = ChangeTheme();
+    const onClick = useThemeColors().changeTheme;
     const theme = useTheme();
 
     return (

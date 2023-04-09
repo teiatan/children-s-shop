@@ -1,15 +1,13 @@
-const { createContext, useState, useContext } = require("react");
+const { createContext, useState } = require("react");
 
-const HeaderContext = createContext();
+export const SearchContext = createContext();
 
 export const HeaderContextProvider = ({children}) => {
     const [search, setSearch] = useState("");
 
     return (
-        <HeaderContext.Provider value={{search: {search, setSearch}}}>
+        <SearchContext.Provider value={{search, setSearch}}>
             {children}
-        </HeaderContext.Provider>
+        </SearchContext.Provider>
     )
 };
-
-export const useSearch = () => useContext(HeaderContext).search;

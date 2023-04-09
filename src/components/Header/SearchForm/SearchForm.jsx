@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Input, Label, Button, Tag } from "./SearchForm.styled";
-import { useSearch } from "context/search";
+import { useSearch } from "context/contectxtHooks";
+
 
 
 export function SearchForm() {

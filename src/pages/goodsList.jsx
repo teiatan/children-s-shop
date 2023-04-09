@@ -2,7 +2,7 @@ import { GalleryProducts } from "components/Main/GalleryProducts/GalleryProducts
 import { Pagination } from "components/pagination/Pagination";
 import { useEffect, useState } from "react";
 import { goods } from "data/goods";
-import { useSearch } from "context/search";
+import { useSearch } from "context/contectxtHooks";
 
 export function GoodsList() {
     
