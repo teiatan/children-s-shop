@@ -28,3 +28,23 @@ export const CoverDiv = styled.div`
   }
 
 `;
+
+export const MobileMenuButton = styled.button`
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+
+  ${device.biggerThanMobile} {
+    display: none;
+  }
+`;
+
+export const MobileMenuContainer = styled.div`
+  display: flex;
+  gap: 10px;
+
+  ${device.mobile} {
+    display: none;
+  }
+`;
