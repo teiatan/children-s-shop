@@ -23,7 +23,8 @@ export const CoverDiv = styled.div`
   color: ${props => (props.theme.header.textColor)};
 
   ${device.mobile} {
-    flex-direction: column;
+    //flex-direction: column;
+    font-size: 10px;
   }
 
 `;

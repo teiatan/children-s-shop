@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-//import { device } from "utils/mediaQueries";
+import { device } from "utils/mediaQueries";
 
 export const Tag = styled.div`
 
@@ -12,6 +12,10 @@ export const Form = styled.form`
     border-radius: 20px;
     border: 1px solid ${props => (props.theme.header.formBorder)};
     overflow: hidden;
+
+    ${device.smallerThanMobile} {
+        max-width: 200px;
+    }
 `;
   
 export const Button = styled.button`
@@ -54,5 +58,10 @@ export const Input = styled.input`
     &::placeholder {
     font: inherit;
     font-size: 18px;
+
+    ${device.smallerThanMobile} {
+        font-size: 13px;
+        text-justify: center;
+    }
   }
 `;
