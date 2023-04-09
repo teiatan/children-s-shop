@@ -2,7 +2,7 @@ const { createContext, useState } = require("react");
 
 export const SearchContext = createContext();
 
-export const HeaderContextProvider = ({children}) => {
+export const SearchContextProvider = ({children}) => {
     const [search, setSearch] = useState("");
 
     return (
