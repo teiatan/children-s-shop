@@ -1,33 +1,35 @@
-//import { GalleryProducts } from "components/Main/GalleryProducts/GalleryProducts";
-//import { Pagination } from "components/pagination/Pagination";
+import { GalleryProducts } from "components/Main/GalleryProducts/GalleryProducts";
+import { Pagination } from "components/pagination/Pagination";
+import { useEffect, useState } from "react";
+import { goods } from "data/goods";
+import { useSearch } from "providers/headerContextProvider";
 
 export function GoodsList() {
-    /* const perPage = 12;
-    const [filteredGoods, setFilteredGoods] = useState(goods);
-    const [shownGoods, setShownGoods] = useState(filteredGoods.slice(0, perPage));
     
-    const handleSearchSubmit = (inputValue) => {
-        const search = inputValue.toLowerCase();
+    const search = useSearch().search;
+    const perPage = 12;
+    const [allGoods, setAllGoods] = useState(goods);
+    const [shownGoods, setShownGoods] = useState(allGoods.slice(0, perPage));
+    
+    useEffect(()=>{
         const filteredGoodsArray = goods.filter(goodsItem => goodsItem.name.toLowerCase().includes(search));
-        setFilteredGoods(filteredGoodsArray);
+        setAllGoods(filteredGoodsArray);
         setShownGoods(filteredGoodsArray.slice(0, perPage));
-        };
-    
-        const giveCuttedArray = (array) => {
-        setShownGoods(array);
-        };
-
-
+    }, [search]);
+        
+    const giveCuttedArray = (array) => {
+    setShownGoods(array);
+    };
 
     return (
     <>
         <GalleryProducts shownGoods={shownGoods}/>
-                <Pagination
-                perPage={perPage}
-                array={filteredGoods}
-                giveCuttedArray={giveCuttedArray}
+        <Pagination
+        perPage={perPage}
+        array={allGoods}
+        giveCuttedArray={giveCuttedArray}
         />
     </>
         
-    ) */
+    )
 }

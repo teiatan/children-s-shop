@@ -35,7 +35,6 @@ export function Pagination ({perPage, array, giveCuttedArray}) {
                 break;
             case "pageButton":
                 page = Number(e.target.textContent);
-                console.log(page);
                 break;
             default: 
                 return;

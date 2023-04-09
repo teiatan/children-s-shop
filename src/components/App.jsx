@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./layout/layout";
+import { GoodsList } from "pages/goodsList";
 
 export const App = () => {
 
@@ -22,7 +23,7 @@ export const App = () => {
   </ThemeProvider> */}
   <Routes>
     <Route path="/" element={<Layout />}>
-        
+        <Route index element={<GoodsList/>} />
     </Route>
   </Routes>
     
