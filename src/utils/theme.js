@@ -2,7 +2,7 @@
 //background-color: ${props => (props.theme.footer.backgroundColor)};
 
 class Theme {
-    constructor({header, main, footer, productCard}) {
+    constructor({header, main, footer, productCard, pagination}) {
 
         this.header = header ?? {
             backgroundColor: "rgba(247, 169, 168, 1)",
@@ -33,7 +33,12 @@ class Theme {
             nameText: "purple",
             border: "rgba(0, 0, 0, 0.1)",
             borderHover: "rgba(0, 0, 0, 0.3)",
-        }
+        };
+
+        this.pagination = pagination ?? {
+            background: "pink",
+            text: "black",
+        };
     }
 }
 
@@ -69,5 +74,9 @@ export const dark = new Theme({
         border: "rgba(32, 33, 36)",
         borderHover: "rgba(32, 33, 36, 0.3)",
 
+    },
+    pagination: {
+        background: "rgba(48, 49, 52)",
+        text: "rgb(245, 105, 96)",
     }
 });

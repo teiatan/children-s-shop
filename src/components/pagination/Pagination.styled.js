@@ -8,19 +8,12 @@ export const Div = styled.div`
 `;
 
 export const Button = styled.button`
-    //display: block;
     border-radius: 30px;
     padding: 10px;
     min-width: 30px;
-    //height: 80px;
-    box-shadow: 2px 3px 5px darkred;
-    //color: white;
-    background-color: pink;
-    //border: 1px solid gray;
+    color: ${props => props.theme.pagination.text};
+    background-color: ${props => props.theme.pagination.background};
     border: none;
-    box-shadow: 2px 3px 5px lightgrey;
-    //position: absolute;
-    //top: 260px;
-    //right: 10px;
+    //box-shadow: 2px 3px 5px lightgrey;
     cursor: pointer;
 `;
