@@ -41,10 +41,40 @@ export const MobileMenuButton = styled.button`
 `;
 
 export const MobileMenuContainer = styled.div`
+
+  ${device.mobile} {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background-color: ${props => props.theme.header.backgroundColor};
+    width: 260px;
+
+  }
+`;
+
+export const MobileMenuInsideContainer = styled.div`
   display: flex;
   gap: 10px;
 
   ${device.mobile} {
-    display: none;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px;
+    
   }
 `;
+
+export const HeaderSpan = styled.span`
+display: none;
+  ${device.mobile}{
+    display: inline;
+    margin-left: 10px;
+    font-size: 15px;
+    color: ${props => props.theme.header.textColor};
+    vertical-align: 35%;
+  }
+`;
+

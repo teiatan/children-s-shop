@@ -7,6 +7,7 @@ export const PageContainerDiv = styled.div`
     box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
+    position: relative;
 
     ${device.tablet} {
         max-width: 768px;

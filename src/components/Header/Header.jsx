@@ -1,4 +1,4 @@
-import { HeaderTag, CoverDiv, MobileMenuButton, MobileMenuContainer } from "./Header.styled";
+import { HeaderTag, CoverDiv, MobileMenuButton, MobileMenuContainer, MobileMenuInsideContainer, HeaderSpan } from "./Header.styled";
 import { PageContainer } from "components/pageContainer/pageContainer";
 import { Logo } from "./Logo/Logo";
 import { SearchForm } from "./SearchForm/SearchForm";
@@ -11,17 +11,22 @@ import { Link } from "react-router-dom";
 import { Button } from "./ThemeSwitcher/ThemeSwitcher.styled";
 import { useTheme } from "@emotion/react";
 import { AuthButtons } from "./authButtons";
-import { useIsLoggedIn } from "context/contectxtHooks";
-import { useState } from "react";
+import { useIsLoggedIn, useIsMobileMenuOpened } from "context/contectxtHooks";
+import { useEffect, useState } from "react";
 
 export function Header() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const mobileMenuContext = useIsMobileMenuOpened();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(mobileMenuContext);
     const theme = useTheme();
     const isLoggedIn = useIsLoggedIn().isLoggedIn;
 
+    useEffect(()=>{
+        setIsMobileMenuOpen(mobileMenuContext.isMobileMenuOpen);
+    }, [mobileMenuContext.isMobileMenuOpen]);
+
     const onClickMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+        mobileMenuContext.setIsMobileMenuOpen(!isMobileMenuOpen);
+    };  
 
     return (
         <HeaderTag>
@@ -31,30 +36,38 @@ export function Header() {
                     <SearchForm />
                     <MobileMenuButton onClick={onClickMobileMenu}>
                         <FiMenu 
-                            className={(isMobileMenuOpen ? 'isVisible' : 'isHidden')}
+                            className={(!isMobileMenuOpen ? 'isVisible' : 'isHidden')}
                             color={theme.header.textColor} size={30}
                         />
                         <TfiClose 
-                            className={(isMobileMenuOpen ? 'isHidden' : 'isVisible')}
+                            className={(!isMobileMenuOpen ? 'isHidden' : 'isVisible')}
                             color={theme.header.textColor} size={30}
                         />
                     </MobileMenuButton>
-                    <MobileMenuContainer>
-                        {isLoggedIn &&
-                            <>
-                                <Link to={"/basket"}> 
-                                    <SlBasket color={theme.header.textColor} size={30}/>
-                                </Link>
-                                <Link to={"/profile"}>
-                                    <RxPerson color={theme.header.textColor} size={30} />
-                                </Link>
-                            </>
-                        }
-                        <ThemeSwitcher/>
-                        <Button>
-                            <TfiFilter color={theme.header.textColor} size={25}/>
-                        </Button>
-                        <AuthButtons />                        
+                    <MobileMenuContainer {...(isMobileMenuOpen && {style: {display:"block"}})}>
+                        <MobileMenuInsideContainer>
+                            {isLoggedIn &&
+                                <>
+                                    <Link 
+                                        to={"/basket"}
+                                        //onClick={()=>mobileMenuContext.setIsMobileMenuOpenv(false)}
+                                    > 
+                                        <SlBasket color={theme.header.textColor} size={30}/>
+                                        <HeaderSpan>Корзина</HeaderSpan>
+                                    </Link>
+                                    <Link to={"/profile"}>
+                                        <RxPerson color={theme.header.textColor} size={30} />
+                                        <HeaderSpan>Особистий кабінет</HeaderSpan>
+                                    </Link>
+                                </>
+                            }
+                            <ThemeSwitcher/>
+                            <Button>
+                                <TfiFilter color={theme.header.textColor} size={25}/>
+                                <HeaderSpan> Фільтр</HeaderSpan>
+                            </Button>
+                            <AuthButtons />    
+                        </MobileMenuInsideContainer>                    
                     </MobileMenuContainer>
                     
                 </CoverDiv>
