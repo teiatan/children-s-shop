@@ -11,15 +11,16 @@ import { Link } from "react-router-dom";
 import { Button } from "./ThemeSwitcher/ThemeSwitcher.styled";
 import { useTheme } from "@emotion/react";
 import { AuthButtons } from "./authButtons";
-import { useIsLoggedIn, useIsMobileMenuOpen } from "context/contectxtHooks";
+import { useIsLoggedIn } from "context/contectxtHooks";
+import { useState } from "react";
 
 export function Header() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const theme = useTheme();
     const isLoggedIn = useIsLoggedIn().isLoggedIn;
-    const isMobileMenuOpen = useIsMobileMenuOpen();
 
     const onClickMobileMenu = () => {
-
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     return (
@@ -28,7 +29,7 @@ export function Header() {
                 <CoverDiv>
                     <Logo />
                     <SearchForm />
-                    <MobileMenuButton>
+                    <MobileMenuButton onClick={onClickMobileMenu}>
                         <FiMenu 
                             className={(isMobileMenuOpen ? 'isVisible' : 'isHidden')}
                             color={theme.header.textColor} size={30}
