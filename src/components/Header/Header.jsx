@@ -3,7 +3,8 @@ import { PageContainer } from "components/pageContainer/pageContainer";
 import { Logo } from "./Logo/Logo";
 import { SearchForm } from "./SearchForm/SearchForm";
 import { ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
-import { FiMenu, FiFilter } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
+import { TfiFilter } from "react-icons/tfi";
 import { VscSignOut, VscSignIn } from "react-icons/vsc";
 import { RxPerson } from "react-icons/rx";
 import { SlBasket } from "react-icons/sl";
@@ -26,7 +27,7 @@ export function Header() {
                     <MobileMenuContainer>
                         <ThemeSwitcher/>
                         <Button>
-                            <FiFilter color={theme.header.textColor} size={30}/>
+                            <TfiFilter color={theme.header.textColor} size={25}/>
                         </Button>
                         <Link>
                             <VscSignIn color={theme.header.textColor} size={30} />
@@ -37,7 +38,7 @@ export function Header() {
                         <Link> 
                             <SlBasket color={theme.header.textColor} size={30}/>
                         </Link>
-                        <Link>
+                        <Link to={"/profile"}>
                             <RxPerson color={theme.header.textColor} size={30} />
                         </Link>
                     </MobileMenuContainer>

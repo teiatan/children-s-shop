@@ -1,7 +1,7 @@
-import { Link } from "./Logo.styled";
+import { StyledLink } from "./Logo.styled";
 
 export function Logo() {
     return (
-        <Link href="index.html">Мама та Маля</Link>
+        <StyledLink to={'/'}>Мама та Маля</StyledLink>
     );
 };

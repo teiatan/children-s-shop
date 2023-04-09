@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import { device } from "utils/mediaQueries";
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
     font-weight: 700;
     text-transform: uppercase;
     ${device.mobile} {

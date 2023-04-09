@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Layout } from "./layout/layout";
 import { GoodsList } from "pages/goodsList";
 import { ProductDetails } from "pages/productDetails";
+import { Profile } from "pages/profile";
 
 export const App = () => {
 
@@ -26,6 +27,7 @@ export const App = () => {
     <Route path="/" element={<Layout />}>
         <Route index element={<GoodsList/>} />
         <Route path="/product/:productId" element={<ProductDetails/>} />
+        <Route path="/profile" element={<Profile />} />
     </Route>
   </Routes>
     
