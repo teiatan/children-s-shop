@@ -10,13 +10,15 @@ import { SlBasket } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { Button } from "./ThemeSwitcher/ThemeSwitcher.styled";
 import { useTheme } from "@emotion/react";
-import { AuthButtons } from "./authButtons";
+import { AuthButtons } from "../AuthButtons/authButtons";
 import { useIsLoggedIn, useIsMobileMenuOpened } from "context/contectxtHooks";
 import { useEffect, useState } from "react";
+import { Filter } from "./Filter/Filter";
 
 export function Header() {
     const mobileMenuContext = useIsMobileMenuOpened();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(mobileMenuContext);
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
     const theme = useTheme();
     const isLoggedIn = useIsLoggedIn().isLoggedIn;
 
@@ -50,26 +52,29 @@ export function Header() {
                                 <>
                                     <Link 
                                         to={"/basket"}
-                                        //onClick={()=>mobileMenuContext.setIsMobileMenuOpenv(false)}
+                                        onClick={()=>mobileMenuContext.setIsMobileMenuOpen(false)}
                                     > 
                                         <SlBasket color={theme.header.textColor} size={30}/>
                                         <HeaderSpan>Корзина</HeaderSpan>
                                     </Link>
-                                    <Link to={"/profile"}>
+                                    <Link 
+                                        onClick={()=>mobileMenuContext.setIsMobileMenuOpen(false)}
+                                        to={"/profile"}
+                                    >
                                         <RxPerson color={theme.header.textColor} size={30} />
                                         <HeaderSpan>Особистий кабінет</HeaderSpan>
                                     </Link>
                                 </>
                             }
                             <ThemeSwitcher/>
-                            <Button>
+                            <Button onClick={()=>{mobileMenuContext.setIsMobileMenuOpen(false); setIsFilterOpen(!isFilterOpen)}}>
                                 <TfiFilter color={theme.header.textColor} size={25}/>
                                 <HeaderSpan> Фільтр</HeaderSpan>
                             </Button>
                             <AuthButtons />    
                         </MobileMenuInsideContainer>                    
                     </MobileMenuContainer>
-                    
+                    {isFilterOpen && <Filter setIsFilterOpen={setIsFilterOpen}/>}
                 </CoverDiv>
             </PageContainer>
         </HeaderTag>
