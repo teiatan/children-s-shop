@@ -9,6 +9,7 @@ import { Theme } from "providers/themeContextProvider";
 import { ThemeProvider } from "@emotion/react";
 import { useState } from "react";
 import { Pagination } from "./pagination/Pagination";
+import { Routes } from "react-router-dom";
 
 export const App = () => {
 
@@ -29,7 +30,7 @@ const giveCuttedArray = (array) => {
   setShownGoods(array);
 };
   return (<>
-  <ThemeProvider theme={theme}>
+  {/* <ThemeProvider theme={theme}>
     <Header handleSearchSubmit={handleSearchSubmit}/>
 
     <Main>
@@ -44,7 +45,10 @@ const giveCuttedArray = (array) => {
     </Main>
   
     <Footer />
-  </ThemeProvider>
+  </ThemeProvider> */}
+  <Routes>
+    
+  </Routes>
     
   </>);
 };
