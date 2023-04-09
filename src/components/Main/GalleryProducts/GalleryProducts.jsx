@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ProductCard } from 'components/ProductCard/ProductCard';
+import { ProductCard } from 'components/Main/ProductCard/ProductCard';
 import { GalleryStyle } from './GalleryProducts.styled';
 //import { goods } from 'data/goods';
 

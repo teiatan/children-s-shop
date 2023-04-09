@@ -1,7 +1,7 @@
 
 import { goods } from "data/goods";
 import { Header } from "./Header/Header";
-import { GalleryProducts } from "./GalleryProducts/GalleryProducts";
+import { GalleryProducts } from "./Main/GalleryProducts/GalleryProducts";
 import { Main } from "./Main/Main";
 import { Footer } from "./Footer/Footer";
 import { PageContainer } from "./pageContainer/pageContainer";
@@ -9,7 +9,6 @@ import { Theme } from "providers/themeContextProvider";
 import { ThemeProvider } from "@emotion/react";
 import { useState } from "react";
 import { Pagination } from "./pagination/Pagination";
-import { Routes } from "react-router-dom";
 
 export const App = () => {
 
@@ -30,7 +29,7 @@ const giveCuttedArray = (array) => {
   setShownGoods(array);
 };
   return (<>
-  {/* <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
     <Header handleSearchSubmit={handleSearchSubmit}/>
 
     <Main>
@@ -45,10 +44,7 @@ const giveCuttedArray = (array) => {
     </Main>
   
     <Footer />
-  </ThemeProvider> */}
-  <Routes>
-    
-  </Routes>
+  </ThemeProvider>
     
   </>);
 };
